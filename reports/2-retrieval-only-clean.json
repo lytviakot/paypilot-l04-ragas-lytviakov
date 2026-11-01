@@ -1,13 +1,13 @@
 {
   "prompt_version": "base.v1",
-  "set_hash": "04e7e6f0cb35",
+  "set_hash": "8c47643955d3",
   "profile": "clean",
   "judge_model": "not-used",
   "rubric_version": "rubric.v1",
-  "elapsed": 31.7,
+  "elapsed": 32.5,
   "set": "_retrieval_generated",
   "gate": "daily",
-  "ran_at": "2026-11-01T12:51:02.364590+00:00",
+  "ran_at": "2026-11-01T13:46:30.337167+00:00",
   "passed": 11,
   "total": 12,
   "skipped": 0,
@@ -60,10 +60,10 @@
         "detail": ""
       },
       "answers": [
-        "Here is the FX spread table from the Verta tariff schedule (tariffs.md, \"FX spreads by tier\"):\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |\n\nThe spread applies only after the free monthly conversion allowance is used up. Conversions that fit within the remaining allowance carry no spr"
+        "Here is the FX spread table from the Verta tariff schedule (tariffs.md, \"FX spreads by tier\"):\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |\n\nThe documentation states that the spread applies only after the free monthly conversion allowance is used up. Conversions that fit within the re"
       ],
-      "latency_ms": 2373,
-      "tokens": 6348,
+      "latency_ms": 2753,
+      "tokens": 6325,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -119,10 +119,10 @@
         "detail": ""
       },
       "answers": [
-        "The free monthly conversion allowance for a Tier 3 customer is **EUR 5,000** (EUR equivalent).\n\nFor reference, the Tier 3 FX spread is 0.5% over the mid-market rate, and it applies only once the monthly allowance is used up. Conversions that fit entirely within the remaining allowance carry no spread. The allowance resets on the first calendar day of each month. If a single conversion crosses the "
+        "The free monthly conversion allowance for a Tier 3 customer is **EUR 5,000** (EUR equivalent).\n\nFor reference, the Tier 3 FX spread is 0.5% over the mid-market rate, and it applies only once the monthly allowance is used up. Conversions that fit within the remaining allowance carry no spread. The allowance resets on the first calendar day of each month. If a single conversion crosses the boundary,"
       ],
-      "latency_ms": 2235,
-      "tokens": 6378,
+      "latency_ms": 2527,
+      "tokens": 6388,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -178,10 +178,10 @@
         "detail": ""
       },
       "answers": [
-        "Here is what the Verta documentation says about payment disputes.\n\n**Dispute reason codes and windows** (window counted in days from the transaction date):\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |\n\n**Duplicate charge:** the dispute window is **60 days**"
+        "Here are the dispute reason codes and their windows from the Verta dispute rules:\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |\n\nFor a **duplicate charge**, the dispute window is **60 days**, counted from the transaction date. A dispute opened after the wind"
       ],
-      "latency_ms": 2372,
-      "tokens": 6207,
+      "latency_ms": 2418,
+      "tokens": 6269,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -239,8 +239,8 @@
       "answers": [
         "For a **duplicate charge**, you have **60 days** from the transaction date to file a dispute under Verta's dispute rules. A dispute opened after that window closes is not eligible.\n\nIf you have a specific duplicate charge in mind, send me the transaction and I can check whether it is still within the window and eligible to be filed."
       ],
-      "latency_ms": 2112,
-      "tokens": 6104,
+      "latency_ms": 2463,
+      "tokens": 6106,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -296,44 +296,44 @@
         "detail": ""
       },
       "answers": [
-        "The shortest window belongs to **unauthorized_debit**, at **56 days** from the transaction date.\n\nFor comparison, the other windows are:\n- duplicate_charge: 60 days\n- goods_not_received: 90 days\n- service_not_rendered: 90 days\n- fraud_card_not_present: 120 days\n\nA dispute opened after the window closes is not eligible."
+        "The shortest window is for **unauthorized_debit**, at **56 days** from the transaction date. A dispute opened after that window closes is not eligible.\n\nFor comparison, the other windows are:\n- duplicate_charge: 60 days\n- goods_not_received: 90 days\n- service_not_rendered: 90 days\n- fraud_card_not_present: 120 days"
       ],
-      "latency_ms": 1943,
-      "tokens": 6104,
+      "latency_ms": 2513,
+      "tokens": 6192,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "dispute reason codes time window days"
+            "query": "dispute reason codes time window days for each reason code"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "dispute reason codes time window days",
+            "query": "dispute reason codes time window days for each reason code",
             "fragments": [
               {
                 "id": "disputes.md#s1",
                 "doc": "disputes.md",
-                "score": 1.7504,
+                "score": 2.188,
                 "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach dispute reason code has its own window, counted in days from the\ntransaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
               },
               {
                 "id": "disputes-process.md#s4",
                 "doc": "disputes-process.md",
-                "score": 1.22,
+                "score": 1.525,
                 "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
               },
               {
-                "id": "disputes-process.md#s6",
-                "doc": "disputes-process.md",
-                "score": 0.8839,
-                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+                "id": "reason-codes.md#s6",
+                "doc": "reason-codes.md",
+                "score": 1.372,
+                "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, which may push it past its window."
               },
               {
-                "id": "glossary.md#s3",
-                "doc": "glossary.md",
-                "score": 0.8165,
-                "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
+                "id": "reason-codes.md#s5",
+                "doc": "reason-codes.md",
+                "score": 1.118,
+                "text": "Reason code guide\n## unauthorized_debit\nUsed for a direct debit the customer never mandated. This code carries the\nshortest window overall."
               }
             ]
           }
@@ -355,10 +355,10 @@
         "detail": ""
       },
       "answers": [
-        "A SWIFT transfer from Verta has two parts:\n\n- **Flat fee:** EUR 15.00\n- **Percentage fee:** 0.3% of the EUR equivalent of the amount sent\n\nFor example, a transfer equivalent to EUR 1,000 would cost EUR 15.00 + EUR 3.00 (0.3%) = **EUR 18.00** in Verta fees.\n\nCorrespondent bank charges deducted by intermediary banks are outside Verta's control and are not refunded. Fees already charged on a SWIFT tr"
+        "A SWIFT transfer from Verta has a fee of **EUR 15.00 flat plus 0.3%** of the EUR equivalent of the amount sent.\n\nFor example, on a transfer equivalent to EUR 1,000, the fee would be EUR 15.00 + 0.3% × EUR 1,000 (EUR 3.00) = **EUR 18.00**.\n\nPlease note:\n- Correspondent bank charges deducted by intermediary banks are outside Verta's control and are not refunded.\n- If the beneficiary bank rejects a S"
       ],
-      "latency_ms": 3301,
-      "tokens": 6493,
+      "latency_ms": 3819,
+      "tokens": 6530,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -421,20 +421,20 @@
         "detail": "pattern '(?=[\\\\s\\\\S]*0\\\\.9\\\\s*%)(?=[\\\\s\\\\S]*20,000)' did not match"
       },
       "answers": [
-        "**Tier 2 daily transfer limit:** EUR 20,000 (monthly limit: EUR 200,000), per the Verta limits documentation.\n\n**Tier 2 FX spread:** The documentation I searched confirms that the tier sets the FX spread, but it doesn't list the Tier 2 spread figure. I can't state a number without a source. Your tariff schedule should have it, or a human agent can confirm it. I can escalate if you'd like."
+        "**Tier 2 daily transfer limit:** EUR 20,000 (monthly limit: EUR 200,000), per the Verta limits documentation.\n\n**Tier 2 FX spread:** I couldn't find this figure. The documentation confirms that tiers set the FX spread, but the search results don't give the Tier 2 rate. I haven't estimated it. If you need the exact spread, I can escalate to a human agent or, if you give me your customer ID, run a l"
       ],
-      "latency_ms": 2566,
-      "tokens": 6309,
+      "latency_ms": 2884,
+      "tokens": 6299,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "Tier 2 FX spread and daily transfer limit"
+            "query": "FX spread and daily transfer limit for Tier 2"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "Tier 2 FX spread and daily transfer limit",
+            "query": "FX spread and daily transfer limit for Tier 2",
             "fragments": [
               {
                 "id": "limits.md#s1",
@@ -480,10 +480,10 @@
         "detail": ""
       },
       "answers": [
-        "SWIFT transfers submitted after **14:00 CET** are processed the next business day. For reference, SEPA transfers submitted after 16:00 CET are processed the next business day, and internal transfers have no cut-off."
+        "SWIFT transfers submitted after **14:00 CET** are processed the next business day. For reference, SEPA transfers have a 16:00 CET cut-off, and internal transfers have no cut-off."
       ],
-      "latency_ms": 1617,
-      "tokens": 6087,
+      "latency_ms": 1736,
+      "tokens": 6091,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -539,10 +539,10 @@
         "detail": ""
       },
       "answers": [
-        "For a fraud dispute over EUR 50, Verta applies a provisional credit within two business days of the dispute being raised. The provisional credit is a temporary refund while the dispute is reviewed, and it is reversed if the dispute is later declined.\n\nThis applies to fraud reason codes (such as fraud on a card-not-present payment or an unauthorized debit). If you have a specific transaction you wa"
+        "For a fraud dispute above EUR 50, Verta applies a provisional credit within two business days of the dispute being filed. The credit is reversed if the dispute is later declined.\n\nThis applies to fraud reason codes (for example, fraud on a card-not-present payment or an unauthorized debit). If you have a specific transaction you'd like to dispute, I can check its eligibility for you."
       ],
-      "latency_ms": 2169,
-      "tokens": 6333,
+      "latency_ms": 1919,
+      "tokens": 6307,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -598,44 +598,44 @@
         "detail": ""
       },
       "answers": [
-        "A card authorisation places a hold on your funds for up to 7 calendar days. If the merchant does not settle the payment within that window, the hold is released automatically."
+        "A card authorisation hold lasts up to 7 calendar days. If the merchant has not settled the transaction within that window, the hold is released automatically."
       ],
-      "latency_ms": 1732,
-      "tokens": 5897,
+      "latency_ms": 1958,
+      "tokens": 5891,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "card authorisation hold duration"
+            "query": "how long does a card authorisation hold last"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "card authorisation hold duration",
+            "query": "how long does a card authorisation hold last",
             "fragments": [
               {
                 "id": "accounts.md#s3",
                 "doc": "accounts.md",
-                "score": 0.898,
+                "score": 1.4368,
                 "text": "Accounts and balances\n## Authorisation holds\nA card authorisation places a hold for up to 7 calendar days. If the merchant\ndoes not settle within that window the hold is released automatically."
               },
               {
                 "id": "security-policy.md#s2",
                 "doc": "security-policy.md",
-                "score": 0.5883,
+                "score": 1.1767,
                 "text": "Customer security policy\n## Card blocking\nA customer may block a card immediately. Blocking is reversible for 30 days;\nafter that a replacement card must be ordered."
               },
               {
-                "id": "reason-codes.md#s1",
-                "doc": "reason-codes.md",
-                "score": 0.5145,
-                "text": "Reason code guide\n## fraud_card_not_present\nUsed when a card was used remotely without the authorisation of the cardholder.\nThe longest chargeback window applies. Evidence: confirmation that the card was\nin the possession of the customer."
+                "id": "security-policy.md#s1",
+                "doc": "security-policy.md",
+                "score": 1.0,
+                "text": "Customer security policy\n## Identity verification\nBefore discussing account details the agent confirms the customer identifier.\nVerta never asks a customer for a full card number, a PIN, or a one-time\npasscode in a support conversation."
               },
               {
-                "id": "fees-detail.md#s2",
-                "doc": "fees-detail.md",
-                "score": 0.4588,
-                "text": "Fee details\n## Card payment fee\nCard payments carry a percentage fee on the EUR equivalent. No flat fee\napplies."
+                "id": "notifications.md#s4",
+                "doc": "notifications.md",
+                "score": 0.9806,
+                "text": "Notifications\n## Security alerts\nLogin from a new device, a card block, and a change of the registered email\nalways generate a notification and cannot be disabled."
               }
             ]
           }
@@ -657,10 +657,10 @@
         "detail": ""
       },
       "answers": [
-        "Human agents are available from 08:00 to 20:00 CET. The support chat itself is open 24 hours a day. If you request a human outside those hours, the escalation is queued until agents return.\n\nWould you like me to connect you with a human agent now?"
+        "Human agents are available from 08:00 to 20:00 CET. The support chat itself is open 24 hours a day. If you request a human outside those hours, the escalation is queued until agents come back online at 08:00 CET. Support is provided in English."
       ],
-      "latency_ms": 1951,
-      "tokens": 5949,
+      "latency_ms": 1947,
+      "tokens": 5942,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -716,10 +716,10 @@
         "detail": ""
       },
       "answers": [
-        "No. According to Verta's currency conversion operations documentation, a conversion that crosses the free monthly allowance boundary has the tier spread applied to the **entire** conversion, not only to the portion above the boundary.\n\nThe free allowance also works as follows:\n- If the whole conversion fits within your remaining monthly allowance, no spread is charged.\n- Once the allowance is exha"
+        "No. According to Verta's conversion documentation, the tier spread applies to the entire conversion when it crosses the free allowance boundary, not only to the part above it.\n\n- **Within the allowance:** If the whole conversion fits in the remaining monthly free allowance, no spread is charged.\n- **Crossing the boundary:** The full tier spread is applied to the whole converted amount.\n- **Allowan"
       ],
-      "latency_ms": 3184,
-      "tokens": 6596,
+      "latency_ms": 4090,
+      "tokens": 6725,
       "tool_calls": [
         {
           "name": "search_knowledge_base",

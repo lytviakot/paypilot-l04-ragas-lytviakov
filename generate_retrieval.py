@@ -89,7 +89,7 @@ CASES = [
      "If a conversion crosses the free allowance boundary, is the spread charged only on the part above it?",
      "fx-operations.md",
      "A conversion that would cross the allowance boundary has the tier spread applied to the entire conversion, not only to the portion above the boundary.",
-     r"\b(?:entire|whole|full)\b",
+     r"\b(?:entire|whole)\s+(?:conversion|amount)\b",
      "edge", None, "missed_fragment", "high"),
 ]
 
@@ -99,6 +99,7 @@ def squash(text: str) -> str:
 
 
 def main() -> int:
+    sys.stdout.reconfigure(newline="\n")  # keep LF on Windows, the set_hash depends on it
     bad = 0
     for (cid, question, doc, ref, pattern, source, complaint,
          failure, severity) in CASES:

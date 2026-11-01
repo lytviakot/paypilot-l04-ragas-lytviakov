@@ -23,7 +23,7 @@ Put `golden.jsonl` into `sets/` of the kit and run from the kit folder:
 
     docker compose run --rm eval --set golden --profile clean
 
-`set_hash`: `ae84277bb205`. Agent model: `claude-haiku-5-5`. The judge is not used.
+`set_hash`: `b483bff25cf7`. Agent model: `claude-haiku-5-5`. The judge is not used.
 
 Regenerate the retrieval cases (needs the stand repo next to this one, or set `CORPUS_DIR`):
 
@@ -39,7 +39,7 @@ Regenerate the retrieval cases (needs the stand repo next to this one, or set `C
 
 The one failing case on `clean` is `RET-007` (Tier 2 spread and daily limit in one question). It is a real retrieval problem, not a bad case: at the default `top_k` 4 the spread table falls out of the results. It is described in section 5 of the report. TON-001 is a release-gate case and is not in the daily run, which is why the full set shows 42 cases, not 43.
 
-The first version of `RET-011` was a bad question (the agent took the word "threshold" for a confidential monitoring threshold and did not search), so it was rewritten before the runs above.
+The first version of `RET-011` was a bad question (the agent took the word "threshold" for a confidential monitoring threshold and did not search), so it was rewritten before the runs above. The first pattern of `RET-012` also matched the word "full" in "full FX quote", so one broken-stand run passed by accident; the pattern was tightened to "entire/whole conversion/amount" and all three runs were repeated. The reports in `reports/` are from the repeated runs.
 
 ## Where the results differ from the lesson
 

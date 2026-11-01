@@ -12,7 +12,7 @@ corpus        Verta documentation, 21 files
 indexes       kb_clean (chunks by section) / kb_broken (chunks of 160 characters)
 profiles      clean, lesson-04
 model         claude-haiku-5-5
-set           golden.jsonl, 43 cases, 12 of them retrieval layer, set_hash ae84277bb205
+set           golden.jsonl, 43 cases, 12 of them retrieval layer, set_hash b483bff25cf7
 runs          2026-11-01
 ```
 
