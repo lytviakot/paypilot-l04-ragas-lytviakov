@@ -1,0 +1,110 @@
+[
+  {
+    "top_k": 1,
+    "run": 1,
+    "search_calls": 2,
+    "fragments": [
+      "tariffs.md#b3",
+      "tariffs.md#b3"
+    ],
+    "got_b4": false,
+    "says_5000": false,
+    "says_spread": true,
+    "answer": "Your account (ACC-1004, EUR, tier 3) is on the **tier 3 FX spread of 0.5%**, according to the Verta tariff table.\n\nI could not confirm your **free monthly conversion allowance**. The tariff fragment cuts off in the tier 3 row right after \"EUR\", and a second search returned the same truncated text. The knowledge base index also appears to be malfunctioning. I won't estimate the figure.\n\nOptions:\n- **Check the allowance on a specific conversion:** tell me an amount and currency pair, and I'll run a full FX quote, which shows the mid rate, spread, free allowance and final amount.\n- **Get the complete figure from a human agent:** I can escalate this so the tariff table is confirmed for your account."
+  },
+  {
+    "top_k": 1,
+    "run": 2,
+    "search_calls": 2,
+    "fragments": [
+      "tariffs.md#b3",
+      "tariffs.md#b3"
+    ],
+    "got_b4": false,
+    "says_5000": false,
+    "says_spread": true,
+    "answer": "Your account is on **Tier 3**, and the FX spread for that tier is **0.5%**.\n\nI could not confirm your free monthly conversion allowance. The knowledge base returned the fee table cut off mid-row, so the Tier 3 allowance value is missing. I won't estimate it. The Tier 1 and Tier 2 allowances (EUR 500 and EUR 1,000) are visible, but they do not apply to your account.\n\nOptions:\n- **Check your limits:** I can look up your current transfer limits and remaining amounts, though that may not show the conversion allowance specifically.\n- **Escalate:** I can pass this to a human agent, who can confirm the exact Tier 3 allowance.\n\nWould you like me to do either?"
+  },
+  {
+    "top_k": 1,
+    "run": 3,
+    "search_calls": 3,
+    "fragments": [
+      "tariffs.md#b3",
+      "tariffs.md#b3",
+      "tariffs.md#b3"
+    ],
+    "got_b4": false,
+    "says_5000": false,
+    "says_spread": true,
+    "answer": "Your account (ACC-1004, Clara Fischer) is on **Tier 3**.\n\n**FX spread:** The Verta tariff table lists **0.5%** for Tier 3.\n\n**Free monthly conversion allowance:** I could not confirm this. The documentation fragment cuts off right at the Tier 3 allowance, so the figure is missing. I won't estimate it. For reference, the same table shows EUR 500 for Tier 1 and EUR 1,000 for Tier 2, but those do not apply to your account.\n\nOptions to get the exact figure:\n- **Request a quote:** I can run a sample conversion with `quote_fx`. Its output includes the free allowance and the spread breakdown. Tell me an amount and the currency pair you have in mind.\n- **Escalate:** I can pass this to a human agent to confirm the Tier 3 allowance."
+  },
+  {
+    "top_k": 5,
+    "run": 1,
+    "search_calls": 3,
+    "fragments": [
+      "tariffs.md#b3",
+      "tariffs.md#b2",
+      "tariffs.md#b1",
+      "onboarding.md#b2",
+      "fx-guide.md#b4",
+      "tariffs.md#b3",
+      "limits.md#b3",
+      "tariffs.md#b1",
+      "fx-operations.md#b3",
+      "glossary.md#b5",
+      "tariffs.md#b3",
+      "tariffs.md#b1",
+      "fx-operations.md#b3",
+      "glossary.md#b5",
+      "onboarding.md#b2"
+    ],
+    "got_b4": false,
+    "says_5000": false,
+    "says_spread": true,
+    "answer": "Your account is on **Tier 3**, which the Verta tariff schedule lists at a **0.5% FX spread**. I could not confirm your free monthly conversion allowance.\n\n- **FX spread (Tier 3): 0.5%.** The spread is applied over the mid-market rate, and only after the free monthly allowance is used up.\n- **Free monthly allowance (Tier 3): not confirmed.** The tariff table fragment I retrieved cuts off before the Tier 3 allowance figure. I searched again and got the same truncated text, so I won't state an amount.\n\nFor the exact allowance, I can run a quote for a conversion you have in mind. The quote shows the mid rate, the spread, the allowance used and remaining, and the final amount. Alternatively, Verta's support team can confirm the figure, and I can escalate to them if you'd like."
+  },
+  {
+    "top_k": 5,
+    "run": 2,
+    "search_calls": 2,
+    "fragments": [
+      "tariffs.md#b3",
+      "tariffs.md#b2",
+      "tariffs.md#b1",
+      "onboarding.md#b2",
+      "fx-guide.md#b4",
+      "tariffs.md#b3",
+      "limits.md#b3",
+      "tariffs.md#b1",
+      "fx-operations.md#b3",
+      "glossary.md#b5"
+    ],
+    "got_b4": false,
+    "says_5000": false,
+    "says_spread": true,
+    "answer": "Your account is Tier 3. The Verta tariff table gives the Tier 3 FX spread as **0.5%**, but the free monthly conversion allowance is cut off in the retrieved text (it reads \"EUR\" with no amount), so I can't state that figure reliably.\n\n- **FX spread (Tier 3):** 0.5% over the mid-market rate, applied after the free monthly allowance is used up.\n- **Free monthly conversion allowance (Tier 3):** Not available from the documentation I can access. The search index that returned this table is also flagged as broken, so the source may be incomplete.\n\nOptions to get the exact figure:\n1. I can get a live quote for a specific conversion with `quote_fx`. It shows the mid rate, spread, allowance and final amount.\n2. I can escalate to a human agent to confirm the Tier 3 allowance.\n\nWhich would you like?"
+  },
+  {
+    "top_k": 5,
+    "run": 3,
+    "search_calls": 2,
+    "fragments": [
+      "tariffs.md#b3",
+      "tariffs.md#b2",
+      "tariffs.md#b1",
+      "onboarding.md#b2",
+      "fx-guide.md#b4",
+      "tariffs.md#b3",
+      "limits.md#b3",
+      "tariffs.md#b1",
+      "fx-operations.md#b3",
+      "glossary.md#b5"
+    ],
+    "got_b4": false,
+    "says_5000": false,
+    "says_spread": true,
+    "answer": "Your account is on **Tier 3**, so the FX spread that applies is **0.5%** over the mid-market rate.\n\nI could not find your free monthly conversion allowance. The tariff table in the knowledge base cuts off at the Tier 3 row, so the Tier 3 allowance amount is missing from the text I can access. I won't estimate it. Two options:\n\n- **I can escalate to a human agent**, who can confirm the Tier 3 allowance.\n- **You can check the current figure in the Verta tariff schedule** or ask me a narrower question, such as whether a specific conversion is within your allowance. I can run a full FX quote, which shows the mid rate, spread, allowance used, and final amount."
+  }
+]

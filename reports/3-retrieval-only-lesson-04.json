@@ -1,0 +1,536 @@
+{
+  "prompt_version": "base.v1+D05",
+  "set_hash": "04e7e6f0cb35",
+  "profile": "lesson-04",
+  "judge_model": "not-used",
+  "rubric_version": "rubric.v1",
+  "elapsed": 58.7,
+  "set": "_retrieval_generated",
+  "gate": "daily",
+  "ran_at": "2026-11-01T12:52:06.238134+00:00",
+  "passed": 0,
+  "total": 12,
+  "skipped": 0,
+  "by_layer": {
+    "retrieval": {
+      "passed": 0,
+      "total": 12
+    }
+  },
+  "coverage": {
+    "cases": 12,
+    "layers": {
+      "retrieval": 12
+    },
+    "oracles": {
+      "corpus": 12
+    },
+    "sources": {
+      "complaint": 3,
+      "corpus": 6,
+      "edge": 3
+    },
+    "severities": {
+      "high": 7,
+      "low": 1,
+      "medium": 4
+    },
+    "ladder_levels": [
+      3
+    ],
+    "gates": {
+      "daily": 12
+    },
+    "human_oracle_pct": 0.0,
+    "severity_filled_pct": 100.0
+  },
+  "cases": [
+    {
+      "skipped": false,
+      "id": "RET-001",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '(?![\\\\s\\\\S]*1,500)(?=[\\\\s\\\\S]*1\\\\.5\\\\s*%)(?=[\\\\s\\\\S]*0\\\\.9\\\\s*%)(?=[\\\\s\\\\S]*0\\\\.5\\\\s*%)(?=[\\\\s\\\\S]*5,000)' did not match"
+      },
+      "answers": [
+        "I can't give you the exact spread table for every tier with confidence. My instructions direct me to answer fee and spread questions from memory rather than from the documentation, and I don't have a verified copy of those figures. Quoting numbers from memory could give you wrong terms, so I won't.\n\nHere are two ways to get accurate figures:\n\n1. **Live quote for your account:** Tell me the amount "
+      ],
+      "latency_ms": 5283,
+      "tokens": 3538,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "RET-002",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '5,000' did not match"
+      },
+      "answers": [
+        "I don't have a confirmed figure for the free monthly conversion allowance for Tier 3, and I won't guess, since the amount affects what you'd be charged.\n\nI can check the Verta documentation for the current Tier 3 allowance if you'd like. If you want to know your own allowance and how much you've used, I can also look that up against your account. Or I can escalate the question to a human agent who"
+      ],
+      "latency_ms": 3213,
+      "tokens": 3168,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "RET-003",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '(?=[\\\\s\\\\S]*fraud_card_not_present)(?=[\\\\s\\\\S]*goods_not_received)(?=[\\\\s\\\\S]*service_not_rendered)(?=[\\\\s\\\\S]*unauthorized_debit)(?=[\\\\s\\\\S]*\\\\b60\\\\b)' did not match"
+      },
+      "answers": [
+        "I couldn't get the dispute window from the documentation. The search returned only a truncated fragment (\"Each dispute reason code has its own window, counted in days from the transaction date. A dispute...\"), and the number itself wasn't in it. I don't want to give you a figure I can't verify.\n\n**Reason codes:** The dispute system accepts these five codes:\n- duplicate_charge\n- fraud_card_not_pres"
+      ],
+      "latency_ms": 5783,
+      "tokens": 9505,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute reason codes duplicate charge dispute window days"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "dispute reason codes duplicate charge dispute window days",
+            "fragments": [
+              {
+                "id": "disputes.md#b1",
+                "doc": "disputes.md",
+                "score": 1.6,
+                "text": "# Payment dispute rules ## Reason codes and chargeback windows Each dispute reason code has its own window, counted in days from the transaction date. A dispute"
+              }
+            ]
+          }
+        },
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "duplicate_charge chargeback window days from transaction date"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "duplicate_charge chargeback window days from transaction date",
+            "fragments": [
+              {
+                "id": "disputes.md#b1",
+                "doc": "disputes.md",
+                "score": 1.2,
+                "text": "# Payment dispute rules ## Reason codes and chargeback windows Each dispute reason code has its own window, counted in days from the transaction date. A dispute"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-004",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '\\\\b60\\\\b' did not match"
+      },
+      "answers": [
+        "I couldn't retrieve the exact window for duplicate charges. The Verta document I searched returned only a partial excerpt, which states that each reason code has its own window counted in days from the transaction date, but not the number. I don't want to give you a figure I can't verify.\n\nHere are two ways to get a definitive answer:\n\n1. **Check your specific transaction.** If you send me the tra"
+      ],
+      "latency_ms": 3699,
+      "tokens": 6013,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute window duplicate charge how many days to file"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "dispute window duplicate charge how many days to file",
+            "fragments": [
+              {
+                "id": "disputes.md#b1",
+                "doc": "disputes.md",
+                "score": 1.0,
+                "text": "# Payment dispute rules ## Reason codes and chargeback windows Each dispute reason code has its own window, counted in days from the transaction date. A dispute"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-005",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "medium",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '(?=[\\\\s\\\\S]*unauthorized_debit)(?=[\\\\s\\\\S]*\\\\b56\\\\b)' did not match"
+      },
+      "answers": [
+        "I can't confirm which code has the shortest window. The policy document I can access returned only part of the table. It shows:\n\n- **fraud_card_not_present:** 120 days\n- **goods_not_received:** 90 days\n\nThe windows for **duplicate_charge**, **service_not_rendered**, and **unauthorized_debit** were cut off, so I don't want to guess at them. Windows are counted in days from the transaction date.\n\nOp"
+      ],
+      "latency_ms": 7387,
+      "tokens": 13173,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute reason code time window days duplicate_charge fraud_card_not_present goods_not_received service_not_rendered unauthorized_debit"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "dispute reason code time window days duplicate_charge fraud_card_not_present goods_not_received service_not_rendered unauthorized_debit",
+            "fragments": [
+              {
+                "id": "disputes.md#b2",
+                "doc": "disputes.md",
+                "score": 1.6977,
+                "text": " opened after the window closes is not eligible. | Reason code | Window (days) | |---|---| | fraud_card_not_present | 120 | | goods_not_received | 90 | | duplic"
+              }
+            ]
+          }
+        },
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute window days by reason code duplicate_charge unauthorized_debit service_not_rendered"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "dispute window days by reason code duplicate_charge unauthorized_debit service_not_rendered",
+            "fragments": [
+              {
+                "id": "disputes.md#b1",
+                "doc": "disputes.md",
+                "score": 1.6,
+                "text": "# Payment dispute rules ## Reason codes and chargeback windows Each dispute reason code has its own window, counted in days from the transaction date. A dispute"
+              }
+            ]
+          }
+        },
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "chargeback window table reason code days unauthorized_debit service_not_rendered duplicate_charge"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "chargeback window table reason code days unauthorized_debit service_not_rendered duplicate_charge",
+            "fragments": [
+              {
+                "id": "disputes.md#b2",
+                "doc": "disputes.md",
+                "score": 1.2127,
+                "text": " opened after the window closes is not eligible. | Reason code | Window (days) | |---|---| | fraud_card_not_present | 120 | | goods_not_received | 90 | | duplic"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-006",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '(?=[\\\\s\\\\S]*\\\\b15(?:\\\\.00)?\\\\b)(?=[\\\\s\\\\S]*0\\\\.3\\\\s*%)' did not match"
+      },
+      "answers": [
+        "I don't have a reliable SWIFT transfer fee figure for Verta, so I won't quote one from memory. Fees can depend on your account tier and the transfer currency, and a wrong number could mislead you.\n\nI can check the Verta documentation for the current SWIFT transfer fee, or I can connect you with a human agent who can confirm it. Which would you prefer?"
+      ],
+      "latency_ms": 3088,
+      "tokens": 3151,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "RET-007",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '(?=[\\\\s\\\\S]*0\\\\.9\\\\s*%)(?=[\\\\s\\\\S]*20,000)' did not match"
+      },
+      "answers": [
+        "I can't give you verified Tier 2 figures for the FX spread or the daily transfer limit, and I've not run a documentation search. Verta's tariff figures aren't something I can state reliably from memory, and I don't want to give you numbers that might be wrong.\n\nHere's what I can do:\n\n- **Your own daily limit:** I can pull the transfer limits currently on file for your account and show your remaini"
+      ],
+      "latency_ms": 5300,
+      "tokens": 3647,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "RET-008",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "medium",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '14:00' did not match"
+      },
+      "answers": [
+        "I couldn't find the SWIFT cut-off time in Verta's documentation. The search returned only a note that internal transfers have no cut-off, which doesn't cover SWIFT, and I don't want to give you a time I can't verify.\n\nOptions:\n- **Ask a human agent:** I can escalate your question so someone can confirm the current SWIFT cut-off.\n- **Check your bank's transfer page:** the cut-off is usually shown w"
+      ],
+      "latency_ms": 4220,
+      "tokens": 6136,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "SWIFT transfer cut-off time"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "SWIFT transfer cut-off time",
+            "fragments": [
+              {
+                "id": "transfers.md#b4",
+                "doc": "transfers.md",
+                "score": 0.6255,
+                "text": " Internal transfers have no cut-off. ## References Every outgoing transfer carries a reference visible on both sides. References are limited to 140 characters. "
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-009",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "medium",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '\\\\b(?:two|2) business days\\\\b' did not match"
+      },
+      "answers": [
+        "I can't confirm how quickly provisional credit is applied for a fraud dispute over EUR 50. Our knowledge base returned only partial text on this topic. It confirms that provisional credit is a temporary refund applied while a dispute is reviewed, and that it is reversed if the dispute is declined. It does not give a timeframe, and I don't want to give you a number I can't verify.\n\nHere are the opt"
+      ],
+      "latency_ms": 7307,
+      "tokens": 12875,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "provisional credit timing fraud dispute over EUR 50"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "provisional credit timing fraud dispute over EUR 50",
+            "fragments": [
+              {
+                "id": "limits.md#b3",
+                "doc": "limits.md",
+                "score": 1.278,
+                "text": "t | Monthly limit | |---|---|---| | Tier 1 | EUR 5,000 | EUR 50,000 | | Tier 2 | EUR 20,000 | EUR 200,000 | | Tier 3 | EUR 100,000 | EUR 1,000,000 | ## How the "
+              }
+            ]
+          }
+        },
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "provisional credit dispute"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "provisional credit dispute",
+            "fragments": [
+              {
+                "id": "glossary.md#b6",
+                "doc": "glossary.md",
+                "score": 0.8944,
+                "text": " and transfer limits. ## Provisional credit A temporary refund applied while a dispute is reviewed; reversed if the dispute is declined."
+              }
+            ]
+          }
+        },
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute resolution timeline days fraud refund"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "dispute resolution timeline days fraud refund",
+            "fragments": [
+              {
+                "id": "disputes.md#b1",
+                "doc": "disputes.md",
+                "score": 0.8,
+                "text": "# Payment dispute rules ## Reason codes and chargeback windows Each dispute reason code has its own window, counted in days from the transaction date. A dispute"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-010",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "low",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '\\\\b(?:7|seven)\\\\b' did not match"
+      },
+      "answers": [
+        "I couldn't find verified information on card authorisation hold duration. Our knowledge base search returned nothing relevant to this question, and I don't want to give you a figure I can't confirm.\n\nHere are two ways to get an accurate answer:\n- **Human agent:** I can escalate your question to a support colleague who can confirm the hold period for your card.\n- **Rephrased search:** If you tell m"
+      ],
+      "latency_ms": 3981,
+      "tokens": 5928,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "card authorisation hold duration how long does it last"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "card authorisation hold duration how long does it last",
+            "fragments": [
+              {
+                "id": "onboarding.md#b5",
+                "doc": "onboarding.md",
+                "score": 0.7071,
+                "text": ", but outgoing transfers are blocked until it does."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-011",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "medium",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '(?=[\\\\s\\\\S]*08:00)(?=[\\\\s\\\\S]*20:00)' did not match"
+      },
+      "answers": [
+        "I'm sorry, I couldn't find the opening hours for human agents. My knowledge base search returned no information on support hours, and I don't want to give you a time that may be wrong.\n\nYou can check the current hours in the Verta app or on the Verta website. If you'd like to speak to a human agent now, tell me and I'll escalate your request."
+      ],
+      "latency_ms": 3737,
+      "tokens": 5850,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "human agent support hours opening times contact"
+          },
+          "result": {
+            "index": "kb_broken",
+            "top_k": 1,
+            "query": "human agent support hours opening times contact",
+            "fragments": [
+              {
+                "id": "compliance.md#b6",
+                "doc": "compliance.md",
+                "score": 0.8165,
+                "text": "scalated to a human agent immediately."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-012",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 3,
+        "assertion": "regex",
+        "detail": "pattern '\\\\b(?:entire|whole|full)\\\\b' did not match"
+      },
+      "answers": [
+        "I can't confirm from memory how Verta applies the spread across the free allowance boundary, and I don't want to give you a rule that might be wrong. Two ways to get a verified answer:\n\n1. **Run a quote.** If you tell me the amount and the currency pair (for example, 2,000 EUR to USD), I'll pull your FX quote. It shows the mid rate, the spread, the free allowance, and the final amount, so you can "
+      ],
+      "latency_ms": 3850,
+      "tokens": 3261,
+      "tool_calls": []
+    }
+  ]
+}

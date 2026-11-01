@@ -1,0 +1,164 @@
+[
+  {
+    "top_k": 4,
+    "run": 1,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2"
+    ],
+    "has_spread": false,
+    "has_daily_limit": true,
+    "input_tokens": 5960,
+    "output_tokens": 343,
+    "answer": "**Tier 2 daily transfer limit:** EUR 20,000 (monthly limit: EUR 200,000), per the Verta limits documentation.\n\n**Tier 2 FX spread:** I couldn't find it. The search returned the tariff overview, which says tiers determine the FX spread, but it gives no figure for Tier 2. I won't state a number I can't verify. Options:\n\n- I can run a live FX quote for a specific amount and currency pair, which will show the spread applied to your account.\n- I can search the documentation again with a more specific query, such as the tariff schedule's FX section.\n- I can escalate to a human agent for the published Tier 2 spread."
+  },
+  {
+    "top_k": 4,
+    "run": 2,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2"
+    ],
+    "has_spread": false,
+    "has_daily_limit": true,
+    "input_tokens": 5960,
+    "output_tokens": 408,
+    "answer": "**Tier 2 daily transfer limit: EUR 20,000** (monthly limit: EUR 200,000), per the Verta limits documentation.\n\n**Tier 2 FX spread: not found.** The documentation I searched confirms that tiers set the FX spread, but it doesn't give the Tier 2 figure. I won't estimate it. Options:\n\n- I can run a live FX quote for you, which shows the spread applied to your account.\n- I can search the documentation again with a narrower query, such as \"FX spread tariff schedule.\"\n- I can escalate to a human agent for the published Tier 2 spread."
+  },
+  {
+    "top_k": 4,
+    "run": 3,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2"
+    ],
+    "has_spread": false,
+    "has_daily_limit": true,
+    "input_tokens": 5960,
+    "output_tokens": 353,
+    "answer": "**Tier 2 daily transfer limit:** EUR 20,000 (monthly limit: EUR 200,000), per the Verta limits documentation.\n\n**Tier 2 FX spread:** I couldn't find this in the documentation. The search returned only general statements that tiers set the spread, with no Tier 2 figure. I won't estimate it. If you need the exact number, I can run a more specific search, or you can ask a human agent for the current Tier 2 tariff."
+  },
+  {
+    "top_k": 5,
+    "run": 1,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2",
+      "tariffs.md#s2"
+    ],
+    "has_spread": true,
+    "has_daily_limit": true,
+    "input_tokens": 6169,
+    "output_tokens": 361,
+    "answer": "For Tier 2, the knowledge base gives these figures:\n\n- **FX spread:** 0.9% over the mid-market rate. It applies only after the free monthly conversion allowance of EUR 1,000 is used up.\n- **Daily transfer limit:** EUR 20,000 (the monthly limit is EUR 200,000).\n\nI haven't checked your own account, so I can't confirm which tier you're on. If you'd like, I can look up your account and current limit usage."
+  },
+  {
+    "top_k": 5,
+    "run": 2,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2",
+      "tariffs.md#s2"
+    ],
+    "has_spread": true,
+    "has_daily_limit": true,
+    "input_tokens": 6169,
+    "output_tokens": 337,
+    "answer": "For Tier 2, the documentation gives:\n\n- **FX spread:** 0.9% over the mid-market rate. It applies only after the free monthly conversion allowance of EUR 1,000 is used up.\n- **Daily transfer limit:** EUR 20,000 (monthly limit EUR 200,000).\n\nThese are the published tier figures. If you want the limits on your own account, I can check them for you."
+  },
+  {
+    "top_k": 5,
+    "run": 3,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2",
+      "tariffs.md#s2"
+    ],
+    "has_spread": true,
+    "has_daily_limit": true,
+    "input_tokens": 6169,
+    "output_tokens": 334,
+    "answer": "For Tier 2, according to the Verta documentation:\n\n- **FX spread:** 0.9% over the mid-market rate. It applies only after the free monthly conversion allowance of EUR 1,000 is used up.\n- **Daily transfer limit:** EUR 20,000 (the monthly limit is EUR 200,000).\n\nI can check your actual limits and remaining headroom if you give me your customer account details."
+  },
+  {
+    "top_k": 6,
+    "run": 1,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2",
+      "tariffs.md#s2",
+      "onboarding.md#s1"
+    ],
+    "has_spread": true,
+    "has_daily_limit": true,
+    "input_tokens": 6309,
+    "output_tokens": 370,
+    "answer": "For **Tier 2**, according to the Verta documentation:\n\n- **FX spread:** 0.9% over the mid-market rate. It applies only after the free monthly conversion allowance of EUR 1,000 is used up.\n- **Daily transfer limit:** EUR 20,000 (EUR equivalent). The monthly limit is EUR 200,000.\n\nI can check your own limits and remaining daily allowance if you give me your customer ID or sign in to your account."
+  },
+  {
+    "top_k": 6,
+    "run": 2,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2",
+      "tariffs.md#s2",
+      "onboarding.md#s1"
+    ],
+    "has_spread": true,
+    "has_daily_limit": true,
+    "input_tokens": 6309,
+    "output_tokens": 280,
+    "answer": "For Tier 2, according to the Verta documentation:\n\n- **FX spread:** 0.9% over the mid-market rate. It applies only after the free monthly conversion allowance of EUR 1,000 is used up.\n- **Daily transfer limit:** EUR 20,000 (EUR equivalent).\n\nI can also look up your own tier and limits if you'd like."
+  },
+  {
+    "top_k": 6,
+    "run": 3,
+    "search_calls": 1,
+    "search_query": "Tier 2 FX spread and daily transfer limit",
+    "fragments": [
+      "limits.md#s1",
+      "tariffs.md#s1",
+      "glossary.md#s6",
+      "onboarding.md#s2",
+      "tariffs.md#s2",
+      "onboarding.md#s1"
+    ],
+    "has_spread": true,
+    "has_daily_limit": true,
+    "input_tokens": 6309,
+    "output_tokens": 253,
+    "answer": "Per the Verta documentation, Tier 2 has:\n\n- **FX spread:** 0.9% over the mid-market rate. The spread applies only after the free monthly conversion allowance of EUR 1,000 is used up.\n- **Daily transfer limit:** EUR 20,000 (the monthly limit is EUR 200,000).\n\nIf you'd like, I can check your own limits and remaining daily allowance, based on your account."
+  }
+]
