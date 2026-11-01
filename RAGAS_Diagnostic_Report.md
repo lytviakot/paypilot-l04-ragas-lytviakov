@@ -91,21 +91,21 @@ Broken index (`kb_broken`, CUS-0003, question from section 3, 3 runs each, `repo
 
 | Failure point | Fix | Cost | Time to ship | What gets worse | Can a prompt fix it? |
 |---|---|---|---|---|---|
-| Indexation | re-chunk by section or table row, rebuild the index | about USD 400 to 800, almost all of it people (formula below) | 1 to 2 days | answers that worked before may change | no: a cut row cannot be rebuilt from text |
-| Retrieval | `top_k` 5 now; reranking later | about USD 0.2 per 1,000 search turns, plus about USD 25 of work (formula below) | `top_k`: half a day. Reranking: 3 to 5 days, not planned | precision 0.4 | no: the prompt cannot add a fragment that was not returned |
-| Generation | delete the rounding rule from the prompt | about USD 25 of work (formula below) | half a day, including a run of the set | other cases can change | yes, this is the only one |
+| Indexation | re-chunk by section or table row, rebuild the index | about USD 160 to 320, almost all of it people (formula below) | 1 to 2 days | answers that worked before may change | no: a cut row cannot be rebuilt from text |
+| Retrieval | `top_k` 5 now; reranking later | about USD 0.2 per 1,000 search turns, plus about USD 10 of work (formula below) | `top_k`: half a day. Reranking: 3 to 5 days, not planned | precision 0.4 | no: the prompt cannot add a fragment that was not returned |
+| Generation | delete the rounding rule from the prompt | about USD 10 of work (formula below) | half a day, including a run of the set | other cases can change | yes, this is the only one |
 
-How the costs are counted. Assumptions, not measurements: engineer rate USD 50 per hour, embedding price USD 0.10 per million tokens, agent input price USD 1 per million tokens, a working day is 8 hours.
+How the costs are counted. Assumptions, not measurements: engineer rate USD 20 per hour, embedding price USD 0.10 per million tokens, agent input price USD 1 per million tokens, a working day is 8 hours.
 
 ```
 re-index    documents x tokens per document x embedding price + hours x rate
-            21 x ~230 x 0.10 / 1,000,000 + (8 to 16) x 50
-            = USD 0.0005 + USD 400 to 800
+            21 x ~230 x 0.10 / 1,000,000 + (8 to 16) x 20
+            = USD 0.0005 + USD 160 to 320
 retrieval   extra tokens x search turns x input price + hours x rate
-            209 x 1,000 x 1 / 1,000,000 + 0.5 x 50
-            = USD 0.21 per 1,000 turns + USD 25 (top_k 5 only; reranking would be 24 to 40 hours, USD 1,200 to 2,000)
+            209 x 1,000 x 1 / 1,000,000 + 0.5 x 20
+            = USD 0.21 per 1,000 turns + USD 10 (top_k 5 only; reranking would be 24 to 40 hours, USD 480 to 800)
 generation  hours x rate + one run of the set
-            0.5 x 50 + 0.04 = USD 25
+            0.5 x 20 + 0.04 = USD 10
 ```
 
 The corpus is small: 21 files, about 19,000 characters, so about 4,800 tokens (characters divided by 4). Re-embedding it costs a fraction of a cent, so for PayPilot the embedding term is zero and the whole price of re-indexing is the days of people choosing the chunking and re-checking the old questions. If the real knowledge base is much bigger, replace the first two numbers in the formula. One run of the 43 cases costs about USD 0.04 and takes under 4 minutes.
